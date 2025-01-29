@@ -1,0 +1,626 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WebWonder Insights</title>
+    <head>
+        <link rel="stylesheet" href="style.css">
+      </head>
+      
+    <style>
+        /* CSS Styles */
+        body, html {
+            margin: 0;
+            padding: 0;
+            width: 100%;
+            height: 100%;
+            font-family: 'Cinzel', serif;
+            transition: background 0.3s ease, color 0.3s ease;
+        }
+
+        @import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;800&display=swap');
+
+        :root {
+            --background-dark: #000;
+            --color-dark: white;
+            --background-light: #f4f4f4;
+            --color-light: #000;
+        }
+
+        body.dark-mode {
+            background: var(--background-dark);
+            color: var(--color-dark);
+        }
+
+        body.light-mode {
+            background: var(--background-light);
+            color: var(--color-light);
+        }
+
+        .container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background: url('https://img.pikbest.com/wp/202345/dark-colors-the-beautiful-colored-flowers-are-surrounded-by-a-background_9583731.jpg!w700wp') center/cover no-repeat;
+            text-align: center;
+        }
+
+        h1 {
+            font-size: 4rem;
+            font-weight: 800;
+            letter-spacing: 0.1em;
+            background: linear-gradient(90deg, #FFD700, #FF69B4, #40E0D0, #7FFF00, #FFA500);
+            -webkit-background-clip: text;
+            color: transparent;
+            animation: colorCycle 5s infinite;
+        }
+
+        @keyframes colorCycle {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        .main-content {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .cards {
+            display: flex;
+            gap: 20px;
+            margin-top: 50px;
+        }
+
+        .card {
+            width: 200px;
+            height: 200px;
+            background: rgba(255, 255, 255, 0.1);
+            border: 2px solid white;
+            border-radius: 10px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            color: white;
+            font-size: 1.2rem;
+            font-weight: bold;
+            text-align: center;
+            cursor: pointer;
+            transition: transform 0.3s;
+        }
+
+        .card:hover {
+            transform: scale(1.1);
+        }
+
+        .card-description {
+            font-size: 0.9rem;
+            font-weight: normal;
+            margin-top: 10px;
+        }
+
+        .section {
+            display: none;
+            text-align: center;
+            padding: 100px;
+            font-size: 1.5rem;
+            color: white;
+        }
+
+        /* Resn Section */
+        .section#resn {
+            background: url('https://resn.co.nz/resn-share.jpg?bar=2') center/contain no-repeat;
+            background-size: contain;
+        }
+
+        /* Immersive Garden Section */
+        .section#immersive {
+            background: url('https://assets.awwwards.com/awards/avatar/207/678e576bab1d5627112738.jpg') center/contain no-repeat;
+            background-size: contain;
+        }
+
+        /* Every Last Drop Section */
+        .section#lastdrop {
+            background: url('https://c0.wallpaperflare.com/preview/167/763/699/water-droplets-water-wet-liquid.jpg') center/contain no-repeat;
+            background-size: contain;
+        }
+
+        .section.active {
+            display: block;
+        }
+
+        .back-button {
+            margin-top: 20px;
+            font-size: 1rem;
+            padding: 10px 20px;
+            background: #FFD700;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .next-page {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            font-size: 1.2rem;
+            padding: 10px 20px;
+            background: #40E0D0;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body class="dark-mode">
+    <!-- First Page -->
+    <div class="container" id="page1">
+        <div class="main-content">
+            <h1>WebWonder Insights</h1>
+            <p style="font-size: 1.8rem; font-weight: 600; font-style: italic; text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);">
+                Explore exceptional web design, featuring interactive experiences that blend art, technology, and creativity.
+            </p>
+        </div>
+        <button class="next-page" onclick="navigateToPage('page2')">Next</button>
+    </div>
+</body>
+
+
+    <!-- Second Page -->
+    <div class="container" id="page2" style="display: none;">
+        <div class="main-content">
+            <a href="secondpage.html">
+</a>
+
+<div class="scroll-down" onclick="scrollToSection()">
+    <span>&#x2193;</span>
+</div>
+
+<style>
+    .scroll-down {
+        position: fixed;
+        bottom: 20px;
+        left: 50%;
+        transform: translateX(-50%);
+        font-size: 2rem;
+        color: white;
+        cursor: pointer;
+        animation: bounce 1.5s infinite;
+    }
+
+    @keyframes bounce {
+        0%, 20%, 50%, 80%, 100% {
+            transform: translateX(-50%) translateY(0);
+        }
+        40% {
+            transform: translateX(-50%) translateY(10px);
+        }
+        60% {
+            transform: translateX(-50%) translateY(5px);
+        }
+    }
+</style>
+
+<script>
+    function scrollToSection() {
+        const nextSection = document.getElementById('next-section'); // Replace with your target section ID
+        nextSection.scrollIntoView({ behavior: 'smooth' });
+    }
+</script>
+
+            <h1>Explore More</h1>
+            <div class="cards">
+
+                <div class="card" onclick="navigateToSection('resn')">
+                    Resn
+                    <div class="card-description">Transforms web experiences into dynamic, interactive journeys blending art, technology, and creativity.</div>
+                </div>
+                <div class="card" onclick="navigateToSection('immersive')">
+                    Immersive Garden
+                    <div class="card-description">A visually stunning platform delivering interactive, captivating web experiences.</div>
+                </div>
+                <div class="card" onclick="navigateToSection('lastdrop')">
+                    Every Last Drop
+                    <div class="card-description">An interactive site raising awareness about water conservation and daily water usage.</div>
+                </div>
+            </div>
+            <button class="back-button" onclick="navigateToPage('page1')">Back to First Page</button>
+        </div>
+    </div>
+
+    <!-- Sections -->
+    <div id="resn" class="section">
+        <h1>✨ Resn ✨</h1>
+        <p>
+            <a href="https://resn.co.nz" target="_blank" style="font-size: 0.9rem; color: #FFD700; text-decoration: none;">
+                Visit Resn Website
+            </a>
+        </p>
+        <div class="content">
+            <!-- Row 1: Image Left, Text Right -->
+            <div class="row">
+                <img src="Screenshot 2025-01-26 194137.png" alt="Screenshot 1" class="content-image">
+                <p class="content-text">
+                    Resn is not just a creative digital agency; it’s a storytelling platform, weaving immersive narratives through innovative web experiences.
+                </p>
+            </div>
+            <!-- Row 2: Text Left, Image Right -->
+            <div class="row reverse">
+                <p class="content-text">
+                    <strong>What Resn Does:</strong> Resn transforms digital spaces into sensory-driven journeys. With cutting-edge creations, including interactive animations and responsive mobile applications, it sets new standards in web design.
+                </p>
+                <img src="Screenshot 2025-01-26 194159.png" alt="Screenshot 2" class="content-image">
+            </div>
+            <!-- Row 3: Image Left, Text Right -->
+            <div class="row">
+                <img src="Screenshot 2025-01-26 194252.png" alt="Screenshot 3" class="content-image">
+                <p class="content-text">
+                    <strong>How Resn Works:</strong> By integrating dynamic, interactive elements, Resn’s websites engage users on a deeper level, blending art, technology, and storytelling seamlessly.
+                </p>
+            </div>
+            <!-- Row 4: Text Left, Image Right -->
+            <div class="row reverse">
+                <p class="content-text">
+                    Resn’s websites are crafted using the latest technologies such as HTML5, CSS3, and WebGL. These tools allow the agency to create fluid animations and immersive experiences that captivate and engage users.
+                </p>
+                <img src="Screenshot 2025-01-26 194333.png" alt="Screenshot 4" class="content-image">
+            </div>
+            <!-- Row 5: Image Left, Text Right -->
+            <div class="row">
+                <img src="Screenshot 2025-01-26 194432.png" alt="Screenshot 5" class="content-image">
+                <p class="content-text">
+                    <strong>Resn's Vision:</strong> Resn aims to inspire through its work, attracting clients who seek unique, transformative digital experiences that push the boundaries of what’s possible on the web.
+                </p>
+            </div>
+            <!-- Row 6: Impact and Awards -->
+            <div class="row">
+                <img src="resn.png" alt="Impact & Awards" class="content-image">
+                <p class="content-text">
+                    <strong>Resn’s Impact & Recognition:</strong> Resn's commitment to innovation has earned them numerous accolades within the digital design industry. Their projects have been featured in prestigious award shows such as the <strong>Awwwards</strong> and <strong>CSS Design Awards</strong>, solidifying their reputation as pioneers in the digital space.
+                </p>
+            </div>
+            <!-- Row 7: Clientele -->
+            <div class="row reverse">
+                <p class="content-text">
+                    <strong>Trusted by Global Brands:</strong> Resn has collaborated with some of the most renowned brands in the world, including <strong>Apple</strong>, <strong>Disney</strong>, <strong>Pepsi</strong>, and <strong>Gucci</strong>, delivering bespoke digital solutions that bring their clients’ stories to life.
+                </p>
+                <img src="Screenshot 2025-01-26 194601.png" alt="Clientele" class="content-image">
+            </div>
+            <!-- Row 8: Future Vision -->
+            <div class="row">
+                <img src="Screenshot 2025-01-26 194750.png" alt="Future Vision" class="content-image">
+                <p class="content-text">
+                    <strong>Looking Ahead:</strong> With an unwavering commitment to pushing creative boundaries, Resn is focused on the future of interactive web experiences. As technology evolves, so does their passion for crafting groundbreaking narratives that continue to captivate audiences worldwide.
+                </p>
+            </div>
+        </div>
+        <button class="back-button" onclick="goBack()">Back</button>
+    </div>
+    
+    <style>
+        .content {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+        .row {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
+        .row.reverse {
+            flex-direction: row-reverse;
+        }
+        .content-image {
+            width: 50%;
+            max-width: 300px;
+            border-radius: 10px;
+        }
+        .content-text {
+            width: 50%;
+            font-size: 1rem;
+            line-height: 1.5;
+            color: #fdfafa;
+        }
+        .back-button {
+            margin-top: 20px;
+            padding: 10px 20px;
+            font-size: 1rem;
+            background-color: #FFD700;
+            color: #000;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .back-button:hover {
+            background-color: #FFC107;
+        }
+    </style>
+    
+    <script>
+        function goBack() {
+            history.back();
+        }
+    </script>
+    
+    
+
+    <div id="immersive" class="section">
+        <h1>✨ Immersive Garden ✨</h1>
+        <p>
+            <a href="https://immersive-g.com/projects/louis-vuitton-1/backstage/" target="_blank" style="font-size: 0.9rem; color: #FFD700; text-decoration: none;">
+                Explore Louis Vuitton Backstage
+            </a>
+        </p>
+        <div class="content">
+            <!-- Scene 1: Introduction -->
+            <div class="row">
+                <img src="IM 3.png" alt="Scene 1" class="content-image">
+                <p class="content-text">
+                    Welcome to the **Immersive Garden**, a world of boundless creativity. The homepage invites you with stunning visuals and animations that stir curiosity and draw you in.
+                </p>
+            </div>
+            <!-- Scene 2: Purpose -->
+            <div class="row reverse">
+                <p class="content-text">
+                    <strong>What is Immersive Garden?</strong><br>
+                    It’s a digital playground that serves as a portfolio for groundbreaking web projects, blending design and interactivity to create unforgettable online experiences.
+                </p>
+                <img src="ig 2.jpeg" alt="Scene 2" class="content-image">
+            </div>
+            <!-- Scene 3: Technology -->
+            <div class="row">
+                <img src="Screenshot 2025-01-26 233239.png" alt="Scene 3" class="content-image">
+                <p class="content-text">
+                    <strong>How does it work?</strong><br>
+                    Leveraging tools like WebGL, Three.js, CSS animations, and GSAP, Immersive Garden creates seamless transitions and captivating visuals that encourage exploration.
+                </p>
+            </div>
+            <!-- Scene 4: Behind the Scenes -->
+            <div class="row reverse">
+                <p class="content-text">
+                    <strong>Behind the Scenes:</strong><br>
+                    Much like the *Louis Vuitton Backstage* project, it tells stories of innovation and excellence, reimagining web design as an immersive art form. Every detail is crafted to inspire.
+                </p>
+                <img src="Screenshot 2025-01-26 233628.png" alt="Scene 4" class="content-image">
+            </div>
+        </div>
+        <button class="back-button" onclick="goBack()">Back</button>
+    </div>
+    
+    <style>
+        .content {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+        .row {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
+        .row.reverse {
+            flex-direction: row-reverse;
+        }
+        .row.center {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            flex-direction: column;
+        }
+        .content-image {
+            width: 50%;
+            max-width: 400px;
+            border-radius: 10px;
+        }
+        .content-text {
+            width: 50%;
+            font-size: 1.1rem;
+            line-height: 1.8;
+        }
+        .content-text.center-text {
+            width: 100%;
+            max-width: 600px;
+            text-align: center;
+        }
+        .back-button {
+            margin-top: 20px;
+            padding: 10px 20px;
+            font-size: 1.1rem;
+            background-color: #FFD700;
+            color: #000;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .back-button:hover {
+            background-color: #FFC107;
+        }
+    </style>
+    
+    <script>
+        function goBack() {
+            history.back();
+        }
+    </script>
+    
+    
+    
+<!-- Every Last Drop Section -->
+<div id="lastdrop" class="section">
+    <h1>💧 Every Last Drop 💧</h1>
+
+    <p>
+        <a href="http://everylastdrop.co.uk/" target="_blank" style="font-size: 1rem; color: #FFD700; text-decoration: none;">
+            Visit Every Last Drop Website
+        </a>
+    </p>
+    <div class="content">
+        <!-- Row 1: Image Left, Text Right -->
+        <div class="row">
+            <img src="ELD 1.png" alt="Scene 1" class="content-image">
+            <p class="content-text">
+                Imagine stepping into a beautifully animated world where every drop of water tells a story—a story of its journey through our lives and the hidden ways we consume it.
+            </p>
+        </div>
+        <!-- Row 2: Text Left, Image Right -->
+        <div class="row reverse">
+            <p class="content-text">
+                <strong>The Story Begins: Understanding Our Relationship with Water</strong><br>
+                You begin your journey on a bright, animated street, greeted by vibrant illustrations and a friendly, conversational tone. The website seamlessly draws you into a conversation about water—not just the water you see but the “virtual water” you unknowingly consume through everyday products and services.
+            </p>
+            <img src="ELD 2.png" alt="Scene 2" class="content-image">
+        </div>
+        <!-- Row 3: Image Left, Text Right -->
+        <div class="row">
+            <img src="ELD 3.png" alt="Scene 3" class="content-image">
+            <p class="content-text">
+                <strong>How Does It Work?</strong><br>
+                As you scroll, the scenes transition smoothly, creating a sense of movement through the story. Each segment uncovers startling facts about water usage, such as how much water is needed to produce a cup of coffee or a pair of jeans.
+            </p>
+        </div>
+        <!-- Row 4: Text Left, Image Right -->
+        <div class="row reverse">
+            <p class="content-text">
+                Interactive animations bring these statistics to life, making them tangible and relatable.
+            </p>
+            <img src="ELD 4.png" alt="Scene 4" class="content-image">
+        </div>
+        <!-- Row 5: Image Left, Text Right -->
+        <div class="row">
+            <img src="ELD 5.png" alt="Scene 5" class="content-image">
+            <p class="content-text">
+                <strong>The Heart of the Message: Water is Precious</strong><br>
+                The website’s core message is clear: Every drop matters. It highlights the urgency of water conservation and calls for small, actionable changes—like turning off the tap while brushing your teeth or choosing products with a smaller water footprint.
+            </p>
+        </div>
+        <!-- Row 6: Text Left, Image Right -->
+        <div class="row center">
+            <p class="content-text center-text">
+                <strong>Watch the Journey:</strong><br>
+                Dive deeper into the narrative with this compelling video that encapsulates the essence of Every Last Drop's mission.
+            </p>
+        </div>
+        <style>
+            .row.center {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                text-align: center;
+                flex-direction: column;
+                gap: 20px;
+            }
+        
+            .content-text.center-text {
+                max-width: 80%; /* Optional: Limits the width of the text for better readability */
+                font-size: 1.2rem;
+                line-height: 1.8;
+                text-align: center;
+            }
+        </style>
+        
+        
+        <!-- Video Section -->
+        <div class="video-container">
+            <iframe 
+                src="https://player.vimeo.com/video/57858464" 
+                width="90%" 
+                height="500" 
+                frameborder="0" 
+                allow="autoplay; fullscreen; picture-in-picture" 
+                allowfullscreen>
+            </iframe>
+        </div>
+    </div>
+    <button class="back-button" onclick="goBack()">Back</button>
+</div>
+
+<style>
+    .content {
+        display: flex;
+        flex-direction: column;
+        gap: 30px;
+    }
+    .row {
+        display: flex;
+        align-items: center;
+        gap: 30px;
+    }
+    .row.reverse {
+        flex-direction: row-reverse;
+    }
+    .content-image {
+        width: 60%;
+        max-width: 400px;
+        border-radius: 15px;
+    }
+    .content-text {
+        width: 50%;
+        font-size: 1.2rem;
+        line-height: 1.8;
+    }
+    .video-container {
+        display: flex;
+        justify-content: center;
+        margin-top: 30px;
+    }
+    .back-button {
+        margin-top: 20px;
+        padding: 15px 30px;
+        font-size: 1.2rem;
+        background-color: #FFD700;
+        color: #000;
+        border: none;
+        border-radius: 8px;
+        cursor: pointer;
+    }
+    .back-button:hover {
+        background-color: #FFC107;
+    }
+</style>
+
+<script>
+    function goBack() {
+        history.back();
+    }
+</script>
+
+
+
+
+    <script>
+        function toggleTheme() {
+            document.body.classList.toggle('dark-mode');
+            document.body.classList.toggle('light-mode');
+        }
+
+        function navigateToSection(id) {
+            document.querySelector('.container').style.display = 'none';
+            document.querySelectorAll('.section').forEach(section => {
+                section.classList.remove('active');
+            });
+            document.getElementById(id).classList.add('active');
+        }
+
+        function goBack() {
+            document.querySelectorAll('.section').forEach(section => {
+                section.classList.remove('active');
+            });
+            document.querySelector('.container').style.display = 'flex';
+        }
+
+        function navigateToPage(pageId) {
+            document.querySelectorAll('.container').forEach(page => {
+                page.style.display = 'none';
+            });
+            document.getElementById(pageId).style.display = 'flex';
+        }
+    </script>
+</body>
+</html>
+
