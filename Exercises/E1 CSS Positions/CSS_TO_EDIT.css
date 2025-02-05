@@ -1,0 +1,240 @@
+/* BODY AND SECTIONS */
+/* ----------------------------------------------------- */
+/* All body and section styling available here (except for the fonts, which are declared in the defaults+fonts.css). Some properties have already been declared */
+
+body {
+    padding: 40px 10%;
+    background-color: rgb(235, 235, 235) ;  
+}
+
+section {
+    padding: 20px;
+    margin-bottom: 20px;
+    background-color: white;
+}
+
+section > h2 {
+    text-align: center;
+    line-height: 1;
+    border-bottom: 1px solid black;
+    padding-bottom: 8px;
+}
+
+section > em {
+    display: block;
+    margin: 8px 0;
+    text-align: center;
+    font-size: 12px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    margin-bottom: 25px;
+}
+
+section > div {
+    margin: 10px;
+}
+
+#s1 > div {background-color: #FFFF00;}
+#s2 > div {background-color: #CDEAC0;}
+#s3 > div {background-color: #FFFAE3;}
+#s4 > div {background-color: #ff59d3;}
+#s5 > div {background-color: #B8F3FF;}
+#s6 > div {background-color: #B298DC;}
+#s7 > div {background-color: #BDC696;}
+
+
+
+/* Section 1: Span elements styling */
+#s1 span {
+    background-color: yellow;
+    mix-blend-mode: difference;
+    margin-bottom: 2px;
+    height: 30px;
+  }
+  
+  /* Display properties for spans in divs */
+  #s1 div:nth-child(1) span {
+    display: inline;
+  }
+  
+  #s1 div:nth-child(2) span {
+    display: inline-block;
+  }
+  
+  #s1 div:nth-child(3) span, 
+  #s1 div:nth-child(4) span {
+    display: block;
+  }
+  
+  /* Modify 4th div span text alignment */
+  #s1 div:nth-child(4) span {
+    height: auto;
+    text-align: center;
+  }
+  
+  /* Section 2: Div elements styling */
+  #s2 div {
+    display: inline-block;
+  }
+  
+  /* Specific styling for individual divs */
+  #s2 div:nth-child(2) {
+    width: 600px;
+  }
+  
+  #s2 div:nth-child(3) {
+    width: 600px;
+    display: block;
+    margin: auto;
+  }
+  
+  #s2 div:nth-child(4) {
+    width: 100%;
+  }
+  
+  #s2 div:nth-child(5) {
+    width: 100vw;
+  }
+  
+  #s2 div:nth-child(6),
+  #s2 div:nth-child(7),
+  #s2 div:nth-child(8),
+  #s2 div:nth-child(9) {
+    width: 47%;
+  }
+  
+  /* Styling for nested spans */
+  #s2 div span {
+    background-color: yellow;
+    mix-blend-mode: difference;
+    display: block;
+  }
+  
+  #s2 div:nth-child(6) span {
+    width: 50%;
+  }
+  
+  #s2 div:nth-child(7) span,
+  #s2 div:nth-child(8) span,
+  #s2 div:nth-child(9) span {
+    width: 50vw;
+  }
+  
+  /* Overflow settings for specific divs */
+  #s2 div:nth-child(8) {
+    overflow: hidden;
+  }
+  
+  #s2 div:nth-child(9) {
+    overflow: auto;
+  }
+  
+  /* Section 3: Font size settings */
+  #s3 {
+    font-size: 24px;
+  }
+  
+  #s3 div:nth-child(2) {
+    font-size: 15px;
+  }
+  
+  #s3 div:nth-child(3) {
+    font-size: 1.5vw;
+  }
+  
+  #s3 div:nth-child(4) {
+    font-size: 1em;
+  }
+  
+  #s3 div:nth-child(5) {
+    font-size: 1rem;
+  }
+  
+  /* Section 4: Divs styling */
+  #s4 div {
+    width: 50%;
+    margin: auto;
+  }
+  
+  /* Remove margin-right from the second div */
+  #s4 div:nth-child(2) {
+    margin-right: 0;
+  }
+  
+  /* Sticky position for h3 tags */
+  #s4 h3 {
+    position: sticky;
+    top: 1rem;
+  }
+  
+  /* Specific styles for h3 in second div */
+  #s4 div:nth-child(2) h3 {
+    top: 0;
+    background-color: lightgray;
+  }
+  
+  /* Section 5: Divs styling */
+  #s5 div {
+    width: 22%;
+    position: static;
+    margin: 10px;
+    background-color: lightblue;
+    height: 100px;
+    text-align: center;
+  }
+  
+  /* Styling for second div */
+  #s5 div:nth-child(2) {
+    position: relative;
+    right: 20px;
+    bottom: 20px;
+    mix-blend-mode: multiply;
+    background-color: rgba(0, 0, 255, 0.5);
+    height: 150px;
+    line-height: 150px;
+    color: white;
+  }
+  
+  /* Styling for third div */
+  #s5 div:nth-child(3) {
+    position: absolute;
+    right: 20px;
+    top: 10px;
+    background-color: rgba(255, 0, 0, 0.5);
+    height: 120px;
+    line-height: 120px;
+    color: white;
+  }
+  
+  /* Section 6: Relative positioning and div width */
+  #s6 {
+    position: relative;
+  }
+  
+  #s6 div {
+    width: 50%;
+  }
+  
+  /* Absolute positioning for second div */
+  #s6 div:nth-child(2) {
+    position: absolute;
+    right: 0;
+    bottom: 10px;
+    width: 20%;
+  }
+  
+  /* Absolute positioning for third div with mix-blend-mode */
+  #s6 div:nth-child(3) {
+    position: absolute;
+    left: -40px;
+    mix-blend-mode: difference;
+  }
+  
+  /* Section 7: Fixed positioning for second div */
+  #s7 div:nth-child(2) {
+    position: fixed;
+    top: 0;
+    left: 0;
+    margin: 0;
+  }
+  
