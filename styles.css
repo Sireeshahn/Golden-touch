@@ -1,29 +1,21 @@
+/* Import Google Font */
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
 
+/* Global Styling */
 body {
     font-family: 'Poppins', sans-serif;
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
     background: url('https://i.pinimg.com/736x/13/c6/5d/13c65d54f7f9e0a664bdc6f3eb48962c.jpg') no-repeat center center fixed;
     background-size: cover;
     color: white;
     text-align: center;
-}
-
-/* General Styling */
-body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    background: #f9f9f9;
-    color: #333;
     line-height: 1.6;
 }
 
-/* Container */
+/* Main Container */
 .container {
-    text-align: center;
     padding: 40px 20px;
 }
 
@@ -48,16 +40,17 @@ h2 {
     margin-top: 20px;
 }
 
-/* Cards */
+/* Card Styling */
 .card {
     display: block;
     width: 200px;
     padding: 20px;
     border-radius: 16px;
-    background: linear-gradient(145deg, #ffffff, #e6e6e6);
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+    background: rgba(255, 255, 255, 0.2); /* Transparent card for better visibility */
+    backdrop-filter: blur(10px); /* Frosted glass effect */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
     text-decoration: none;
-    color: #333;
+    color: white;
     transition: transform 0.3s, box-shadow 0.3s;
     text-align: center;
 }
@@ -65,7 +58,9 @@ h2 {
 /* Card Hover Effect */
 .card:hover {
     transform: translateY(-8px);
-    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.5);
+    background: rgba(255, 255, 255, 0.3);
+    color: black; /* Dark text on hover */
 }
 
 /* Card Title */
@@ -74,8 +69,3 @@ h2 {
     margin: 0;
 }
 
-
-a:hover {
-    background: rgba(255, 255, 255, 0.3);
-    color: #000;
-}
