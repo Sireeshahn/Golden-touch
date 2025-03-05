@@ -1,0 +1,45 @@
+<!-- index.html -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interactive Style Controller</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <h1>Interactive Style Controller</h1>
+
+    <!-- Text Input -->
+    <label>Change Text: <input type="text" id="textInput" placeholder="Enter text"></label><br><br>
+
+    <!-- Number Input -->
+    <label>Border Thickness: <input type="number" id="borderInput" value="5" min="1" max="20"></label><br><br>
+
+    <!-- Range Slider -->
+    <label>Background Color: <input type="range" id="colorSlider" min="0" max="255"></label><br><br>
+
+    <!-- Dropdown (Select) -->
+    <label>Font Style: 
+        <select id="fontSelect">
+            <option value="Arial">Arial</option>
+            <option value="Courier New">Courier New</option>
+            <option value="Georgia">Georgia</option>
+            <option value="Verdana">Verdana</option>
+        </select>
+    </label><br><br>
+
+    <!-- Image Size Control -->
+    <label>Image Size (px): <input type="number" id="imageSize" value="100" min="50" max="300"></label><br><br>
+
+    <!-- Styled Div -->
+    <div id="styledDiv">
+        <img id="dynamicImage" src="https://via.placeholder.com/100" alt="Dynamic Image">
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
